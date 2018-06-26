@@ -1,18 +1,8 @@
+// @flow
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const Button = ({onPress, children}) => {
-  const { buttonStyle, textStyle } = styles;
-  return (
-    <TouchableOpacity onPress={onPress} style={buttonStyle}>
-      <Text style={textStyle}>
-        {children}
-      </Text>
-    </TouchableOpacity>
-  );
-};
-
-const styles = {
+const styles = StyleSheet.create({
   buttonStyle: {
     flex: 1,
     alignSelf: 'stretch',
@@ -30,7 +20,23 @@ const styles = {
     fontWeight: '600',
     paddingTop: 10,
     paddingBottom: 10,
-  }
+  },
+});
+
+type Props = {
+  onPress: Function,
+  children: React.Node,
 }
 
-export { Button };
+const Button = ({ onPress, children }: Props) => {
+  const { buttonStyle, textStyle } = styles;
+  return (
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
+      <Text style={textStyle}>
+        {children}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
+export default Button;

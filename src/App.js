@@ -8,7 +8,13 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'firebase';
 import Config from 'react-native-config';
-import { Header } from './components/common';
+import {
+  Header,
+  Card,
+  CardSection,
+  Button,
+  Spinner,
+} from './components/common';
 import LoginForm from './components/LoginForm';
 
 const config = {
@@ -21,17 +27,53 @@ const config = {
 };
 
 class App extends Component {
+  state = { loggedIn: null };
+
   componentWillMount() {
     firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(`called: ${user}`);
+      if (user) {
+        this.setState({ loggedIn: true });
+      } else {
+        this.setState({ loggedIn: false });
+      }
+    });
+  }
+
+  renderContent() {
+    const { loggedIn } = this.state;
+    switch (loggedIn) {
+      case false:
+        return <LoginForm />;
+      case true:
+        return (
+          <Card>
+            <CardSection>
+              <Button
+                onPress={() => firebase.auth().signOut()}
+              >
+                Logout
+              </Button>
+            </CardSection>
+          </Card>
+        );
+      default:
+        return (
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <Spinner />
+          </View>
+        );
+    }
   }
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <Header title="Authentication" />
-        <LoginForm />
+        {this.renderContent()}
       </View>
-    )
+    );
   }
 }
 

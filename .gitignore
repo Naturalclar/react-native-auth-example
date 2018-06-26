@@ -57,3 +57,6 @@ buck-out/
 
 # .env file
 .env
+
+# .vscode config
+.vscode

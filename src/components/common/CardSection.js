@@ -1,13 +1,6 @@
+// @flow
 import React from 'react';
 import { View } from 'react-native';
-
-const CardSection = (props) => {
-  return (
-    <View style={styles.containerStyle}>
-      {props.children}
-    </View>
-  );
-};
 
 const styles = {
   containerStyle: {
@@ -18,7 +11,17 @@ const styles = {
     flexDirection: 'row',
     borderColor: '#ddd',
     position: 'relative',
-  }
+  },
+};
+
+type Props = {
+  children : React.Node,
 }
 
-export { CardSection };
+const CardSection = ({ children }: Props) => (
+  <View style={styles.containerStyle}>
+    {children}
+  </View>
+);
+
+export default CardSection;
