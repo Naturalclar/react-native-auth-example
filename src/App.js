@@ -32,7 +32,6 @@ class App extends Component {
   componentWillMount() {
     firebase.initializeApp(config);
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(`called: ${user}`);
       if (user) {
         this.setState({ loggedIn: true });
       } else {
