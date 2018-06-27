@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-const styles = {
+const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20,
   },
@@ -18,7 +18,7 @@ const styles = {
     elevation: 2,
     position: 'relative',
   },
-};
+});
 
 type Props = {
   title: String,
