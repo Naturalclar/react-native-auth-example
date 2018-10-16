@@ -11,22 +11,22 @@
   },
   "dependencies": {
     "firebase": "^5.1.0",
-    "react": "16.3.1",
-    "react-native": "0.55.4",
+    "react": "16.5.2",
+    "react-native": "0.57.3",
     "react-native-config": "^0.11.5"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.5",
-    "babel-jest": "23.2.0",
-    "babel-preset-react-native": "4.0.0",
-    "eslint": "^4.19.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "23.6.0",
+    "babel-preset-react-native": "4.0.1",
+    "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-flowtype": "^3.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.10.0",
-    "jest": "23.2.0",
-    "react-test-renderer": "16.3.1"
+    "jest": "23.6.0",
+    "react-test-renderer": "16.5.2"
   },
   "jest": {
     "preset": "react-native"
