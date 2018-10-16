@@ -1,5 +1,7 @@
 # React-Native Basic Authentication
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Naturalclar/react-native-auth-example.svg)](https://greenkeeper.io/)
+
 A simple authentication example using firebase.
 The app contains a simple Log-in screen and a Log-out screen.
 
